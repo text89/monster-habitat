@@ -4,10 +4,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <title>モンスターポップポイント</title>
-<style> 
+<style>
     body {
         font-family: 'Roboto', sans-serif;
-        padding-left: 16px;
+        padding: 16px;
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        list-style: none;
+    }
+    ul li {
+        background: #445; /* Darker background */
+        color: #fff; /* White text */
+        margin: 5px;
+        border: 1px solid #444;
+        transition: background-color 0.3s, box-shadow 0.3s;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        cursor: pointer;
+        border-radius: 5px; /* Rounded corners */
+        display: inline-block; /* Adjusted to be inline-block */
+    }
+    ul li a {
+        display: block; /* Make the link fill the li */
+        padding: 10px; /* Padding for link for better click area */
+        color: #fff; /* White link color */
+        text-decoration: none; /* No underline */
+        transition: color 0.3s;
+    }
+    ul li:hover {
+        background-color: #556; /* Darker on hover */
+        box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    }
+    ul li a:hover {
+        color: #aad; /* Light blue on hover */
+    }
+    @media (max-width: 600px) {
+        ul {
+            flex-direction: column;
+        }
+        ul li {
+            display: block; /* Full width in small screens */
+        }
     }
 </style>
 </head>
@@ -35,8 +74,55 @@
 <li><a href="020/020.html">グランディール</a></li>
 </ul>
 <h2>インターサーバー</h2>
+<h3>没落者の隠れ家</h3>
 <ul>
 <li><a href="001/001.html">砂の荒野</a></li>
 <li><a href="002/002.html">霜の息吹の高原</a></li>
+<li><a href="027/027.html">虚無の霧の森</a></li>
 </ul>
+<h2>ダンジョン</h2>
+<h3>啓示の塔</h3>
+<ul>
+<li><a href="028/028.html">啓示の塔1階</a></li>
+<li><a href="029/029.html">啓示の塔2階</a></li>
+<li><a href="030/030.html">啓示の塔3階</a></li>
+<li><a href="031/031.html">啓示の塔4階</a></li>
+</ul>
+<h3>黎明の殿堂</h3>
+<ul>
+<li><a href="032/032.html">黎明の殿堂0階</a></li>
+<li><a href="033/033.html">黎明の殿堂1階</a></li>
+<li><a href="034/034.html">黎明の殿堂2階</a></li>
+<li><a href="035/035.html">黎明の殿堂3階</a></li>
+<li><a href="036/036.html">黎明の殿堂4階</a></li>
+</ul>
+<h3>悲嘆の聖地</h3>
+<ul>
+<li><a href="026/026.html">悲嘆の聖地(Lv.35)</a></li>
+<li><a href="022/022.html">悲嘆の聖地(Lv.45)</a></li>
+<li><a href="021/021.html">悲嘆の聖地(Lv.55)</a></li>
+</ul>
+<h3>殉教者の森</h3>
+<ul>
+<li><a href="025/025.html">殉教者の森(Lv.40)</a></li>
+<li><a href="023/023.html">殉教者の森(Lv.50)</a></li>
+<li><a href="024/024.html">殉教者の森(Lv.60)</a></li>
+</ul>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var lists = document.querySelectorAll('ul');
+        lists.forEach(function(list) {
+            var maxWidth = 0;
+            var items = list.querySelectorAll('li');
+            items.forEach(function(item) {
+                if (item.offsetWidth > maxWidth) {
+                    maxWidth = item.offsetWidth;
+                }
+            });
+            items.forEach(function(item) {
+                item.style.width = maxWidth + 'px';
+            });
+        });
+    });
+    </script>
 </body>
