@@ -1,0 +1,636 @@
+<!DOCTYPE html><html lang="ja"><head>
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<title>啓示の塔4階</title> 
+<style> 
+  body {
+            font-family: 'Roboto', sans-serif;
+        }
+  #canvas-container { 
+    position: relative; 
+    left: 0;
+    width: 100%;
+  } 
+  label {
+    cursor: pointer;
+  }
+  canvas { 
+    position: absolute; 
+    left: 0; 
+    top: 16px; 
+  }
+  .boxcontainer {
+    width: fit-content;
+    padding-left: 16px;
+  }
+  .checkboxcontainer {
+    padding-bottom: 4px;
+  }
+    /* チェックボックスコンテナのスタイリング */
+    .checkboxcontainer {
+    width:fit-content;
+    display: flex;
+    align-items: center;
+    }
+
+    /* カスタムチェックボックススタイル */
+    .styled-checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #555;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    }
+    
+    /* チェックボックスがチェックされたときのスタイル */
+    #checkbox1:checked {
+        background-color: #f77189;
+        border-color: #f77189;
+    }
+    /* チェックボックスがチェックされたときのスタイル */
+    #checkbox2:checked {
+        background-color: #f7754f;
+        border-color: #f7754f;
+    }
+    /* チェックボックスがチェックされたときのスタイル */
+    #checkbox3:checked {
+        background-color: #dc8932;
+        border-color: #dc8932;
+    }
+    /* チェックボックスがチェックされたときのスタイル */
+    #checkbox4:checked {
+        background-color: #ae9d31;
+        border-color: #ae9d31;
+    }
+    /* チェックボックスがチェックされたときのスタイル */
+    #checkbox5:checked {
+        background-color: #97a431;
+        border-color: #97a431;
+    }
+    /* チェックボックスがチェックされたときのスタイル */
+    #checkbox6:checked {
+        background-color: #77ab31;
+        border-color: #77ab31;
+    }
+    /* チェックボックスがチェックされたときのスタイル */
+    #checkbox7:checked {
+        background-color: #33b07a;
+        border-color: #33b07a;
+    }
+    /* チェックボックスがチェックされたときのスタイル */
+    #checkbox8:checked {
+        background-color: #35ae93;
+        border-color: #35ae93;
+    }
+    /* チェックボックスがチェックされたときのスタイル */
+    #checkbox9:checked {
+        background-color: #36ada4;
+        border-color: #36ada4;
+    }
+    /* チェックボックスがチェックされたときのスタイル */
+    #checkbox10:checked {
+        background-color: #38a9c5;
+        border-color: #38a9c5;
+    }
+    /* チェックボックスがチェックされたときのスタイル */
+    #checkbox11:checked {
+        background-color: #3aa5df;
+        border-color: #3aa5df;
+    }
+    /* チェックボックスがチェックされたときのスタイル */
+    #checkbox12:checked {
+        background-color: #6e9bf4;
+        border-color: #6e9bf4;
+    }
+    /* チェックボックスがチェックされたときのスタイル */
+    #checkbox13:checked {
+        background-color: #cc7af4;
+        border-color: #cc7af4;
+    }
+    /* チェックボックスがチェックされたときのスタイル */
+    #checkbox14:checked {
+        background-color: #f45cf2;
+        border-color: #f45cf2;
+    }
+    /* チェックボックスがチェックされたときのスタイル */
+    #checkbox15:checked {
+        background-color: #f565cc;
+        border-color: #f565cc;
+    }
+    .title {
+        padding-left: 16px;
+    }
+
+    /* コンテナにフレックスボックスを適用 */
+    .container {
+        display: flex;
+        flex-wrap: wrap; /* アイテムがコンテナを超える場合に折り返す */
+        padding-bottom: 16px;
+    }
+    /* メディアクエリを使用して、特定のビューポート幅でスタイルを調整 */
+    @media (max-width: 600px) {
+        .container {
+            flex-direction: column; /* アイテムを縦に並べる */
+        }
+    }
+</style> 
+</head> 
+<body>
+<h1 class="title">啓示の塔4階</h1>
+<div class="container"><div class="boxcontainer" id="boxcontainer1">
+
+    <div id="checkboxcontainertop" class="checkboxcontainer">
+    <input type="checkbox" id="checkbox1" class="styled-checkbox">
+    <label for="checkbox1">錯乱した精鋭調査隊員</label>
+    </div>
+
+    <div id="checkboxcontainertop" class="checkboxcontainer">
+    <input type="checkbox" id="checkbox2" class="styled-checkbox">
+    <label for="checkbox2">錯乱したナーカ精鋭指揮官</label>
+    </div>
+
+    <div id="checkboxcontainertop" class="checkboxcontainer">
+    <input type="checkbox" id="checkbox3" class="styled-checkbox">
+    <label for="checkbox3">錯乱した精鋭怪獣</label>
+    </div>
+</div>
+<div class="boxcontainer" id="boxcontainer2">
+
+    <div id="checkboxcontainertop" class="checkboxcontainer">
+    <input type="checkbox" id="checkbox4" class="styled-checkbox">
+    <label for="checkbox4">錯乱した兵士の幽霊</label>
+    </div>
+
+    <div id="checkboxcontainertop" class="checkboxcontainer">
+    <input type="checkbox" id="checkbox5" class="styled-checkbox">
+    <label for="checkbox5">錯乱したコウモリオオカミ</label>
+    </div>
+
+    <div id="checkboxcontainertop" class="checkboxcontainer">
+    <input type="checkbox" id="checkbox6" class="styled-checkbox">
+    <label for="checkbox6">錯乱した探知犬</label>
+    </div>
+</div>
+<div class="boxcontainer" id="boxcontainer3">
+
+    <div id="checkboxcontainertop" class="checkboxcontainer">
+    <input type="checkbox" id="checkbox7" class="styled-checkbox">
+    <label for="checkbox7">錯乱したスクリームコウモリ</label>
+    </div>
+
+    <div id="checkboxcontainertop" class="checkboxcontainer">
+    <input type="checkbox" id="checkbox8" class="styled-checkbox">
+    <label for="checkbox8">錯乱したゴブリン盗掘師</label>
+    </div>
+
+    <div id="checkboxcontainertop" class="checkboxcontainer">
+    <input type="checkbox" id="checkbox9" class="styled-checkbox">
+    <label for="checkbox9">錯乱した木の精霊</label>
+    </div>
+</div>
+<div class="boxcontainer" id="boxcontainer4">
+
+    <div id="checkboxcontainertop" class="checkboxcontainer">
+    <input type="checkbox" id="checkbox10" class="styled-checkbox">
+    <label for="checkbox10">錯乱した盗賊の幽霊</label>
+    </div>
+
+    <div id="checkboxcontainertop" class="checkboxcontainer">
+    <input type="checkbox" id="checkbox11" class="styled-checkbox">
+    <label for="checkbox11">錯乱した魔法使いの幽霊</label>
+    </div>
+
+    <div id="checkboxcontainertop" class="checkboxcontainer">
+    <input type="checkbox" id="checkbox12" class="styled-checkbox">
+    <label for="checkbox12">錯乱した聖者</label>
+    </div>
+</div>
+<div class="boxcontainer" id="boxcontainer5">
+
+    <div id="checkboxcontainertop" class="checkboxcontainer">
+    <input type="checkbox" id="checkbox13" class="styled-checkbox">
+    <label for="checkbox13">錯乱した海賊団のトゥータ</label>
+    </div>
+
+    <div id="checkboxcontainertop" class="checkboxcontainer">
+    <input type="checkbox" id="checkbox14" class="styled-checkbox">
+    <label for="checkbox14">錯乱したゴスホーン魔術師</label>
+    </div>
+
+    <div id="checkboxcontainertop" class="checkboxcontainer">
+    <input type="checkbox" id="checkbox15" class="styled-checkbox">
+    <label for="checkbox15">錯乱したセラフィム像</label>
+    </div>
+</div>
+<div class="boxcontainer" id="boxcontainer6">
+</div>
+<div id="canvas-container"> <canvas id="canvas0" style="width:100%"></canvas><canvas id="canvas1" style="width:100%"></canvas>
+<canvas id="canvas2" style="width:100%"></canvas>
+<canvas id="canvas3" style="width:100%"></canvas>
+<canvas id="canvas4" style="width:100%"></canvas>
+<canvas id="canvas5" style="width:100%"></canvas>
+<canvas id="canvas6" style="width:100%"></canvas>
+<canvas id="canvas7" style="width:100%"></canvas>
+<canvas id="canvas8" style="width:100%"></canvas>
+<canvas id="canvas9" style="width:100%"></canvas>
+<canvas id="canvas10" style="width:100%"></canvas>
+<canvas id="canvas11" style="width:100%"></canvas>
+<canvas id="canvas12" style="width:100%"></canvas>
+<canvas id="canvas13" style="width:100%"></canvas>
+<canvas id="canvas14" style="width:100%"></canvas>
+<canvas id="canvas15" style="width:100%"></canvas>
+</div>
+</div>
+<script>
+    // 画像のパスを指定 
+    const imagePath0 = "./map.PNG"; 
+    // canvas要素を取得 
+    const canvas0 = document.getElementById("canvas0"); 
+    const context0 = canvas0.getContext("2d"); 
+    // Imageオブジェクトを作成 
+    const img0 = new Image(); 
+    img0.onload = function() { 
+        // canvasのサイズを初回読み込み時に設定 
+        updateCanvasSize(canvas0, img0); 
+        context0.globalAlpha = 1; // 透過度設定 
+        // 画像をcanvasに描画（アスペクト比維持） 
+        drawImageScaled(img0, canvas0, context0); 
+    }; 
+    img0.src = imagePath0; 
+    function updateCanvasSize(canvas, img) { 
+        // ブラウザのウィンドウの幅と高さに基づいてcanvasのサイズを設定 
+        canvas.width = window.innerWidth; 
+        canvas.height = window.innerHeight; 
+    };
+    function drawImageScaled(img, canvas, ctx) {
+        var checkboxcontainertop = document.getElementById("checkboxcontainertop")
+        var hRatio = (canvas.width)  / img.width    ;
+        var vRatio = (canvas.height - 200 - checkboxcontainertop.clientHeight) / img.height  ;
+        var ratio = 1;
+        if ((canvas.width) < (canvas.height - 200 - checkboxcontainertop.clientHeight)){
+            ratio = hRatio;
+        }else {
+            ratio = vRatio;
+        }
+
+        var centerShift_x = ( canvas.width - img.width*ratio ) / 2;
+        // var centerShift_y = ( canvas.height - img.height*ratio ) / 2;
+        var centerShift_y = 0;
+        ctx.clearRect(0,0,canvas.width, canvas.height);
+        ctx.drawImage(img, 0,0, img.width, img.height,
+                        centerShift_x,centerShift_y,img.width*ratio, img.height*ratio);  
+    }
+        const canvas1 = document.getElementById("canvas1");
+        const context1 = canvas1.getContext("2d");
+        const imagePath1 = "./mask/001.PNG";
+        const img1 = new Image();
+        document.getElementById("checkbox1").addEventListener("change", function() { 
+        
+        if (this.checked) { 
+            
+            img1.onload = function() { 
+                updateCanvasSize(canvas1, img1);
+                context1.globalAlpha = 0.4; // 透過度設定
+                drawImageScaled(img1, canvas1, context1);
+            };
+            img1.src = imagePath1;
+        } else { 
+            // チェックが外れた時はcanvasをクリアする
+            context1.clearRect(0, 0, canvas1.width, canvas1.height);
+        }});
+        const canvas2 = document.getElementById("canvas2");
+        const context2 = canvas2.getContext("2d");
+        const imagePath2 = "./mask/002.PNG";
+        const img2 = new Image();
+        document.getElementById("checkbox2").addEventListener("change", function() { 
+        
+        if (this.checked) { 
+            
+            img2.onload = function() { 
+                updateCanvasSize(canvas2, img2);
+                context2.globalAlpha = 0.4; // 透過度設定
+                drawImageScaled(img2, canvas2, context2);
+            };
+            img2.src = imagePath2;
+        } else { 
+            // チェックが外れた時はcanvasをクリアする
+            context2.clearRect(0, 0, canvas2.width, canvas2.height);
+        }});
+        const canvas3 = document.getElementById("canvas3");
+        const context3 = canvas3.getContext("2d");
+        const imagePath3 = "./mask/003.PNG";
+        const img3 = new Image();
+        document.getElementById("checkbox3").addEventListener("change", function() { 
+        
+        if (this.checked) { 
+            
+            img3.onload = function() { 
+                updateCanvasSize(canvas3, img3);
+                context3.globalAlpha = 0.4; // 透過度設定
+                drawImageScaled(img3, canvas3, context3);
+            };
+            img3.src = imagePath3;
+        } else { 
+            // チェックが外れた時はcanvasをクリアする
+            context3.clearRect(0, 0, canvas3.width, canvas3.height);
+        }});
+        const canvas4 = document.getElementById("canvas4");
+        const context4 = canvas4.getContext("2d");
+        const imagePath4 = "./mask/004.PNG";
+        const img4 = new Image();
+        document.getElementById("checkbox4").addEventListener("change", function() { 
+        
+        if (this.checked) { 
+            
+            img4.onload = function() { 
+                updateCanvasSize(canvas4, img4);
+                context4.globalAlpha = 0.4; // 透過度設定
+                drawImageScaled(img4, canvas4, context4);
+            };
+            img4.src = imagePath4;
+        } else { 
+            // チェックが外れた時はcanvasをクリアする
+            context4.clearRect(0, 0, canvas4.width, canvas4.height);
+        }});
+        const canvas5 = document.getElementById("canvas5");
+        const context5 = canvas5.getContext("2d");
+        const imagePath5 = "./mask/005.PNG";
+        const img5 = new Image();
+        document.getElementById("checkbox5").addEventListener("change", function() { 
+        
+        if (this.checked) { 
+            
+            img5.onload = function() { 
+                updateCanvasSize(canvas5, img5);
+                context5.globalAlpha = 0.4; // 透過度設定
+                drawImageScaled(img5, canvas5, context5);
+            };
+            img5.src = imagePath5;
+        } else { 
+            // チェックが外れた時はcanvasをクリアする
+            context5.clearRect(0, 0, canvas5.width, canvas5.height);
+        }});
+        const canvas6 = document.getElementById("canvas6");
+        const context6 = canvas6.getContext("2d");
+        const imagePath6 = "./mask/006.PNG";
+        const img6 = new Image();
+        document.getElementById("checkbox6").addEventListener("change", function() { 
+        
+        if (this.checked) { 
+            
+            img6.onload = function() { 
+                updateCanvasSize(canvas6, img6);
+                context6.globalAlpha = 0.4; // 透過度設定
+                drawImageScaled(img6, canvas6, context6);
+            };
+            img6.src = imagePath6;
+        } else { 
+            // チェックが外れた時はcanvasをクリアする
+            context6.clearRect(0, 0, canvas6.width, canvas6.height);
+        }});
+        const canvas7 = document.getElementById("canvas7");
+        const context7 = canvas7.getContext("2d");
+        const imagePath7 = "./mask/007.PNG";
+        const img7 = new Image();
+        document.getElementById("checkbox7").addEventListener("change", function() { 
+        
+        if (this.checked) { 
+            
+            img7.onload = function() { 
+                updateCanvasSize(canvas7, img7);
+                context7.globalAlpha = 0.4; // 透過度設定
+                drawImageScaled(img7, canvas7, context7);
+            };
+            img7.src = imagePath7;
+        } else { 
+            // チェックが外れた時はcanvasをクリアする
+            context7.clearRect(0, 0, canvas7.width, canvas7.height);
+        }});
+        const canvas8 = document.getElementById("canvas8");
+        const context8 = canvas8.getContext("2d");
+        const imagePath8 = "./mask/008.PNG";
+        const img8 = new Image();
+        document.getElementById("checkbox8").addEventListener("change", function() { 
+        
+        if (this.checked) { 
+            
+            img8.onload = function() { 
+                updateCanvasSize(canvas8, img8);
+                context8.globalAlpha = 0.4; // 透過度設定
+                drawImageScaled(img8, canvas8, context8);
+            };
+            img8.src = imagePath8;
+        } else { 
+            // チェックが外れた時はcanvasをクリアする
+            context8.clearRect(0, 0, canvas8.width, canvas8.height);
+        }});
+        const canvas9 = document.getElementById("canvas9");
+        const context9 = canvas9.getContext("2d");
+        const imagePath9 = "./mask/009.PNG";
+        const img9 = new Image();
+        document.getElementById("checkbox9").addEventListener("change", function() { 
+        
+        if (this.checked) { 
+            
+            img9.onload = function() { 
+                updateCanvasSize(canvas9, img9);
+                context9.globalAlpha = 0.4; // 透過度設定
+                drawImageScaled(img9, canvas9, context9);
+            };
+            img9.src = imagePath9;
+        } else { 
+            // チェックが外れた時はcanvasをクリアする
+            context9.clearRect(0, 0, canvas9.width, canvas9.height);
+        }});
+        const canvas10 = document.getElementById("canvas10");
+        const context10 = canvas10.getContext("2d");
+        const imagePath10 = "./mask/010.PNG";
+        const img10 = new Image();
+        document.getElementById("checkbox10").addEventListener("change", function() { 
+        
+        if (this.checked) { 
+            
+            img10.onload = function() { 
+                updateCanvasSize(canvas10, img10);
+                context10.globalAlpha = 0.4; // 透過度設定
+                drawImageScaled(img10, canvas10, context10);
+            };
+            img10.src = imagePath10;
+        } else { 
+            // チェックが外れた時はcanvasをクリアする
+            context10.clearRect(0, 0, canvas10.width, canvas10.height);
+        }});
+        const canvas11 = document.getElementById("canvas11");
+        const context11 = canvas11.getContext("2d");
+        const imagePath11 = "./mask/011.PNG";
+        const img11 = new Image();
+        document.getElementById("checkbox11").addEventListener("change", function() { 
+        
+        if (this.checked) { 
+            
+            img11.onload = function() { 
+                updateCanvasSize(canvas11, img11);
+                context11.globalAlpha = 0.4; // 透過度設定
+                drawImageScaled(img11, canvas11, context11);
+            };
+            img11.src = imagePath11;
+        } else { 
+            // チェックが外れた時はcanvasをクリアする
+            context11.clearRect(0, 0, canvas11.width, canvas11.height);
+        }});
+        const canvas12 = document.getElementById("canvas12");
+        const context12 = canvas12.getContext("2d");
+        const imagePath12 = "./mask/012.PNG";
+        const img12 = new Image();
+        document.getElementById("checkbox12").addEventListener("change", function() { 
+        
+        if (this.checked) { 
+            
+            img12.onload = function() { 
+                updateCanvasSize(canvas12, img12);
+                context12.globalAlpha = 0.4; // 透過度設定
+                drawImageScaled(img12, canvas12, context12);
+            };
+            img12.src = imagePath12;
+        } else { 
+            // チェックが外れた時はcanvasをクリアする
+            context12.clearRect(0, 0, canvas12.width, canvas12.height);
+        }});
+        const canvas13 = document.getElementById("canvas13");
+        const context13 = canvas13.getContext("2d");
+        const imagePath13 = "./mask/013.PNG";
+        const img13 = new Image();
+        document.getElementById("checkbox13").addEventListener("change", function() { 
+        
+        if (this.checked) { 
+            
+            img13.onload = function() { 
+                updateCanvasSize(canvas13, img13);
+                context13.globalAlpha = 0.4; // 透過度設定
+                drawImageScaled(img13, canvas13, context13);
+            };
+            img13.src = imagePath13;
+        } else { 
+            // チェックが外れた時はcanvasをクリアする
+            context13.clearRect(0, 0, canvas13.width, canvas13.height);
+        }});
+        const canvas14 = document.getElementById("canvas14");
+        const context14 = canvas14.getContext("2d");
+        const imagePath14 = "./mask/014.PNG";
+        const img14 = new Image();
+        document.getElementById("checkbox14").addEventListener("change", function() { 
+        
+        if (this.checked) { 
+            
+            img14.onload = function() { 
+                updateCanvasSize(canvas14, img14);
+                context14.globalAlpha = 0.4; // 透過度設定
+                drawImageScaled(img14, canvas14, context14);
+            };
+            img14.src = imagePath14;
+        } else { 
+            // チェックが外れた時はcanvasをクリアする
+            context14.clearRect(0, 0, canvas14.width, canvas14.height);
+        }});
+        const canvas15 = document.getElementById("canvas15");
+        const context15 = canvas15.getContext("2d");
+        const imagePath15 = "./mask/015.PNG";
+        const img15 = new Image();
+        document.getElementById("checkbox15").addEventListener("change", function() { 
+        
+        if (this.checked) { 
+            
+            img15.onload = function() { 
+                updateCanvasSize(canvas15, img15);
+                context15.globalAlpha = 0.4; // 透過度設定
+                drawImageScaled(img15, canvas15, context15);
+            };
+            img15.src = imagePath15;
+        } else { 
+            // チェックが外れた時はcanvasをクリアする
+            context15.clearRect(0, 0, canvas15.width, canvas15.height);
+        }});
+// ウィンドウサイズが変更されたときにcanvasのサイズを更新し、画像を再描画 
+window.addEventListener("resize", function() {
+    updateCanvasSize(canvas0, img0); 
+    drawImageScaled(img0, canvas0, context0); 
+    updateCanvasSize(canvas1, img1);
+    chckbx = document.getElementById("checkbox1");
+    if (chckbx.checked){
+    context1.globalAlpha = 0.4; // 透過度設定
+    drawImageScaled(img1, canvas1, context1); }
+    updateCanvasSize(canvas2, img2);
+    chckbx = document.getElementById("checkbox2");
+    if (chckbx.checked){
+    context2.globalAlpha = 0.4; // 透過度設定
+    drawImageScaled(img2, canvas2, context2); }
+    updateCanvasSize(canvas3, img3);
+    chckbx = document.getElementById("checkbox3");
+    if (chckbx.checked){
+    context3.globalAlpha = 0.4; // 透過度設定
+    drawImageScaled(img3, canvas3, context3); }
+    updateCanvasSize(canvas4, img4);
+    chckbx = document.getElementById("checkbox4");
+    if (chckbx.checked){
+    context4.globalAlpha = 0.4; // 透過度設定
+    drawImageScaled(img4, canvas4, context4); }
+    updateCanvasSize(canvas5, img5);
+    chckbx = document.getElementById("checkbox5");
+    if (chckbx.checked){
+    context5.globalAlpha = 0.4; // 透過度設定
+    drawImageScaled(img5, canvas5, context5); }
+    updateCanvasSize(canvas6, img6);
+    chckbx = document.getElementById("checkbox6");
+    if (chckbx.checked){
+    context6.globalAlpha = 0.4; // 透過度設定
+    drawImageScaled(img6, canvas6, context6); }
+    updateCanvasSize(canvas7, img7);
+    chckbx = document.getElementById("checkbox7");
+    if (chckbx.checked){
+    context7.globalAlpha = 0.4; // 透過度設定
+    drawImageScaled(img7, canvas7, context7); }
+    updateCanvasSize(canvas8, img8);
+    chckbx = document.getElementById("checkbox8");
+    if (chckbx.checked){
+    context8.globalAlpha = 0.4; // 透過度設定
+    drawImageScaled(img8, canvas8, context8); }
+    updateCanvasSize(canvas9, img9);
+    chckbx = document.getElementById("checkbox9");
+    if (chckbx.checked){
+    context9.globalAlpha = 0.4; // 透過度設定
+    drawImageScaled(img9, canvas9, context9); }
+    updateCanvasSize(canvas10, img10);
+    chckbx = document.getElementById("checkbox10");
+    if (chckbx.checked){
+    context10.globalAlpha = 0.4; // 透過度設定
+    drawImageScaled(img10, canvas10, context10); }
+    updateCanvasSize(canvas11, img11);
+    chckbx = document.getElementById("checkbox11");
+    if (chckbx.checked){
+    context11.globalAlpha = 0.4; // 透過度設定
+    drawImageScaled(img11, canvas11, context11); }
+    updateCanvasSize(canvas12, img12);
+    chckbx = document.getElementById("checkbox12");
+    if (chckbx.checked){
+    context12.globalAlpha = 0.4; // 透過度設定
+    drawImageScaled(img12, canvas12, context12); }
+    updateCanvasSize(canvas13, img13);
+    chckbx = document.getElementById("checkbox13");
+    if (chckbx.checked){
+    context13.globalAlpha = 0.4; // 透過度設定
+    drawImageScaled(img13, canvas13, context13); }
+    updateCanvasSize(canvas14, img14);
+    chckbx = document.getElementById("checkbox14");
+    if (chckbx.checked){
+    context14.globalAlpha = 0.4; // 透過度設定
+    drawImageScaled(img14, canvas14, context14); }
+    updateCanvasSize(canvas15, img15);
+    chckbx = document.getElementById("checkbox15");
+    if (chckbx.checked){
+    context15.globalAlpha = 0.4; // 透過度設定
+    drawImageScaled(img15, canvas15, context15); }});</script></body></html>
