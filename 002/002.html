@@ -94,46 +94,51 @@
     }
     /* チェックボックスがチェックされたときのスタイル */
     #checkbox10:checked {
+        background-color: #35ae93;
+        border-color: #35ae93;
+    }
+    /* チェックボックスがチェックされたときのスタイル */
+    #checkbox11:checked {
         background-color: #36ada4;
         border-color: #36ada4;
     }
     /* チェックボックスがチェックされたときのスタイル */
-    #checkbox11:checked {
+    #checkbox12:checked {
         background-color: #37abb4;
         border-color: #37abb4;
     }
     /* チェックボックスがチェックされたときのスタイル */
-    #checkbox12:checked {
+    #checkbox13:checked {
         background-color: #38a9c5;
         border-color: #38a9c5;
     }
     /* チェックボックスがチェックされたときのスタイル */
-    #checkbox13:checked {
+    #checkbox14:checked {
         background-color: #3aa5df;
         border-color: #3aa5df;
     }
     /* チェックボックスがチェックされたときのスタイル */
-    #checkbox14:checked {
+    #checkbox15:checked {
         background-color: #6e9bf4;
         border-color: #6e9bf4;
     }
     /* チェックボックスがチェックされたときのスタイル */
-    #checkbox15:checked {
+    #checkbox16:checked {
         background-color: #a48cf4;
         border-color: #a48cf4;
     }
     /* チェックボックスがチェックされたときのスタイル */
-    #checkbox16:checked {
+    #checkbox17:checked {
         background-color: #cc7af4;
         border-color: #cc7af4;
     }
     /* チェックボックスがチェックされたときのスタイル */
-    #checkbox17:checked {
+    #checkbox18:checked {
         background-color: #f45cf2;
         border-color: #f45cf2;
     }
     /* チェックボックスがチェックされたときのスタイル */
-    #checkbox18:checked {
+    #checkbox19:checked {
         background-color: #f565cc;
         border-color: #f565cc;
     }
@@ -234,32 +239,37 @@
 
     <div id="checkboxcontainertop" class="checkboxcontainer">
     <input type="checkbox" id="checkbox14" class="styled-checkbox">
-    <label for="checkbox14">白角の雪男</label>
+    <label for="checkbox14">処刑人の亡霊</label>
     </div>
 
     <div id="checkboxcontainertop" class="checkboxcontainer">
     <input type="checkbox" id="checkbox15" class="styled-checkbox">
-    <label for="checkbox15">氷河の精霊</label>
+    <label for="checkbox15">白角の雪男</label>
     </div>
 </div>
 <div class="boxcontainer" id="boxcontainer6">
 
     <div id="checkboxcontainertop" class="checkboxcontainer">
     <input type="checkbox" id="checkbox16" class="styled-checkbox">
-    <label for="checkbox16">霜の野蛮戦士</label>
+    <label for="checkbox16">氷河の精霊</label>
     </div>
 
     <div id="checkboxcontainertop" class="checkboxcontainer">
     <input type="checkbox" id="checkbox17" class="styled-checkbox">
-    <label for="checkbox17">霜の兵士</label>
+    <label for="checkbox17">霜の野蛮戦士</label>
     </div>
 
     <div id="checkboxcontainertop" class="checkboxcontainer">
     <input type="checkbox" id="checkbox18" class="styled-checkbox">
-    <label for="checkbox18">うろつく石ゴーレム</label>
-</div>
+    <label for="checkbox18">霜の兵士</label>
+    </div>
 </div>
 <div class="boxcontainer" id="boxcontainer7">
+
+    <div id="checkboxcontainertop" class="checkboxcontainer">
+    <input type="checkbox" id="checkbox19" class="styled-checkbox">
+    <label for="checkbox19">うろつく石ゴーレム</label>
+    </div>
 </div>
 <div id="canvas-container"> <canvas id="canvas0" style="width:100%"></canvas><canvas id="canvas1" style="width:100%"></canvas>
 <canvas id="canvas2" style="width:100%"></canvas>
@@ -279,6 +289,7 @@
 <canvas id="canvas16" style="width:100%"></canvas>
 <canvas id="canvas17" style="width:100%"></canvas>
 <canvas id="canvas18" style="width:100%"></canvas>
+<canvas id="canvas19" style="width:100%"></canvas>
 </div>
 </div>
 <script>
@@ -644,6 +655,24 @@
             // チェックが外れた時はcanvasをクリアする
             context18.clearRect(0, 0, canvas18.width, canvas18.height);
         }});
+        const canvas19 = document.getElementById("canvas19");
+        const context19 = canvas19.getContext("2d");
+        const imagePath19 = "./mask/019.PNG";
+        const img19 = new Image();
+        document.getElementById("checkbox19").addEventListener("change", function() { 
+        
+        if (this.checked) { 
+            
+            img19.onload = function() { 
+                updateCanvasSize(canvas19, img19);
+                context19.globalAlpha = 0.4; // 透過度設定
+                drawImageScaled(img19, canvas19, context19);
+            };
+            img19.src = imagePath19;
+        } else { 
+            // チェックが外れた時はcanvasをクリアする
+            context19.clearRect(0, 0, canvas19.width, canvas19.height);
+        }});
 // ウィンドウサイズが変更されたときにcanvasのサイズを更新し、画像を再描画 
 window.addEventListener("resize", function() {
     updateCanvasSize(canvas0, img0); 
@@ -737,4 +766,9 @@ window.addEventListener("resize", function() {
     chckbx = document.getElementById("checkbox18");
     if (chckbx.checked){
     context18.globalAlpha = 0.4; // 透過度設定
-    drawImageScaled(img18, canvas18, context18); }});</script></body></html>
+    drawImageScaled(img18, canvas18, context18); }
+    updateCanvasSize(canvas19, img19);
+    chckbx = document.getElementById("checkbox19");
+    if (chckbx.checked){
+    context19.globalAlpha = 0.4; // 透過度設定
+    drawImageScaled(img19, canvas19, context19); }});</script></body></html>
